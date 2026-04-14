@@ -1,4 +1,6 @@
 #!/bin/bash
-# Melora Flatpak Wrapper (Corrected for Flathub)
-export PYTHONPATH=$PYTHONPATH:/app/share/melora
-exec python3 /app/share/melora/main.py "$@"
+# Melora Flatpak Wrapper (Standardized Structure)
+# The code is located in /app/lib/melora
+
+export PYTHONPATH=$PYTHONPATH:/app/lib/melora
+exec python3 /app/lib/melora/main.py "$@"

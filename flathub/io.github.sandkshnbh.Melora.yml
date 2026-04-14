@@ -11,21 +11,31 @@ finish-args:
   - --share=network
   - --filesystem=home
   - --socket=fallback-x11
-  - --talk-name=org.freedesktop.Notifications
+  - --socket=notifications
 
 modules:
   - name: melora
     buildsystem: simple
     build-commands:
+      # Directories
       - mkdir -p /app/bin
+      - mkdir -p /app/lib/melora
       - mkdir -p /app/share/melora
-      - install -D main.py /app/share/melora/main.py
-      - cp -r src /app/share/melora/
-      - cp -r assets /app/share/melora/
+      - mkdir -p /app/share/applications
+      - mkdir -p /app/share/metainfo
+      - mkdir -p /app/share/icons/hicolor/512x512/apps
+      
+      # Core Code
+      - install -D main.py /app/lib/melora/main.py
+      - cp -r src /app/lib/melora/
+      - cp -r assets /app/lib/melora/
+      
+      # Integration Files
       - install -D flathub/melora-wrapper.sh /app/bin/melora-wrapper.sh
       - install -D flathub/io.github.sandkshnbh.Melora.desktop /app/share/applications/io.github.sandkshnbh.Melora.desktop
       - install -D flathub/io.github.sandkshnbh.Melora.metainfo.xml /app/share/metainfo/io.github.sandkshnbh.Melora.metainfo.xml
       - install -D assets/sk.png /app/share/icons/hicolor/512x512/apps/io.github.sandkshnbh.Melora.png
+      
     sources:
       - type: git
         url: https://github.com/sandkshnbh/Melora-installs.git
