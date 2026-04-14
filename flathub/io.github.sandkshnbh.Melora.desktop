@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Melora
+Comment=Modern Linux App Installer
+Comment[ar]=مثبت تطبيقات لينكس الحديث
+Exec=melora-wrapper %u
+Icon=io.github.sandkshnbh.Melora
+Terminal=false
+Type=Application
+Categories=System;Utility;Settings;
+Keywords=installer;package;deb;rpm;appimage;
+StartupNotify=true
+MimeType=application/vnd.debian.binary-package;application/x-redhat-package-manager;application/x-executable;

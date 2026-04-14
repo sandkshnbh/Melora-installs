@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.sandkshnbh.Melora</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Melora</name>
+  <summary>A premium Linux application installer</summary>
+  <summary xml:lang="ar">مثبت تطبيقات لينكس بلمسة فنية</summary>
+
+  <description>
+    <p>
+      Melora is a sophisticated Linux application installer designed with premium aesthetics 
+      using GTK4 and Libadwaita. It supports major Linux package formats including .deb, .rpm, 
+      AppImage, and flatpakref.
+    </p>
+    <p xml:lang="ar">
+      ميلورا هو مثبت تطبيقات لينكس متطور مصمم بجماليات عالية باستخدام GTK4 و Libadwaita. 
+      يدعم تنسيقات الحزم الرئيسية بما في ذلك .deb و .rpm و AppImage و flatpakref.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.sandkshnbh.Melora.desktop</launchable>
+  <url type="homepage">https://github.com/sandkshnbh/Melora-installs</url>
+  <url type="bugtracker">https://github.com/sandkshnbh/Melora-installs/issues</url>
+  
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main Installer Window</caption>
+      <caption xml:lang="ar">النافذة الرئيسية للمثبت</caption>
+      <image>https://raw.githubusercontent.com/sandkshnbh/Melora-installs/main/assets/sk.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.0.0" date="2024-04-14" />
+  </releases>
+</component>
