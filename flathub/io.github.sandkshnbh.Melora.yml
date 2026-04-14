@@ -5,28 +5,28 @@ sdk: org.gnome.Sdk
 command: melora-wrapper.sh
 finish-args:
   - --share=ipc
-  - --socket=fallback-x11
+  - --socket=x11
   - --socket=wayland
   - --device=dri
   - --share=network
-  - --filesystem=host # Needed to see local .deb/.rpm files
-  - --talk-name=org.freedesktop.Flatpak # Needed for host spawning
-  - --talk-name=org.freedesktop.portal.Notification
+  - --filesystem=home
+  - --socket=fallback-x11
+  - --talk-name=org.freedesktop.Notifications
 
 modules:
   - name: melora
     buildsystem: simple
     build-commands:
       - mkdir -p /app/bin
-      - mkdir -p /app/share/melora/src
-      - mkdir -p /app/share/melora/assets
+      - mkdir -p /app/share/melora
       - install -D main.py /app/share/melora/main.py
-      - install -D src/*.py /app/share/melora/src/
-      - install -D assets/* /app/share/melora/assets/
+      - cp -r src /app/share/melora/
+      - cp -r assets /app/share/melora/
       - install -D flathub/melora-wrapper.sh /app/bin/melora-wrapper.sh
       - install -D flathub/io.github.sandkshnbh.Melora.desktop /app/share/applications/io.github.sandkshnbh.Melora.desktop
       - install -D flathub/io.github.sandkshnbh.Melora.metainfo.xml /app/share/metainfo/io.github.sandkshnbh.Melora.metainfo.xml
-      - install -D assets/sk.png /app/share/icons/hicolor/scalable/apps/io.github.sandkshnbh.Melora.svg # Assuming sk.png as icon
+      - install -D assets/sk.png /app/share/icons/hicolor/512x512/apps/io.github.sandkshnbh.Melora.png
     sources:
-      - type: dir
-        path: ..
+      - type: git
+        url: https://github.com/sandkshnbh/Melora-installs.git
+        branch: main
